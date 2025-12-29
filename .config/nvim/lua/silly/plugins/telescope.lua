@@ -1,15 +1,15 @@
-local telescope = require("telescope");
-local telescopeConfig = require("telescope.config");
-local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) };
-
-table.insert(vimgrep_arguments, "--glob");
-table.insert(vimgrep_arguments, "!**/node_modules/*");
-
 return {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
+    tag = "v0.2.0",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
+        local telescope = require('telescope');
+        local telescopeConfig = require("telescope.config");
+        local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) };
+
+        table.insert(vimgrep_arguments, "--glob");
+        table.insert(vimgrep_arguments, "!**/node_modules/*");
+
         telescope.setup({
             defaults = {
                 vimgrep_arguments = vimgrep_arguments,
