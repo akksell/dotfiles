@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = main
+[user]
+	name = akksell
+	email = axel.ramone@gmail.com
+[pull]
+	ff = only
+[core]
+    editor = nvim
